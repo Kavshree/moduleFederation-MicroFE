@@ -1,4 +1,4 @@
-[Blog](https://javascripthisday.blogspot.com/2025/02/module-bundlers-webpack.html)
+[Blog](https://javascripthisday.blogspot.com/2025/02/micro-front-end-module-federation.html)
 
 To Run:
 npm i
