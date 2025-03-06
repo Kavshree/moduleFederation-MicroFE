@@ -15,7 +15,31 @@
   \******************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("__webpack_require__.e(/*! import() */ \"remote-app_remoteModuleIndex_js\").then(__webpack_require__.bind(__webpack_require__, /*! ../remote-app/remoteModuleIndex.js */ \"../remote-app/remoteModuleIndex.js\")).then((module) => {\r\n    document.body.innerHTML = module.remoteModuleGreet();\r\n})\n\n//# sourceURL=webpack://host-app/./index.js?");
+eval("__webpack_require__.e(/*! import() */ \"webpack_container_remote_remoteApp_Module\").then(__webpack_require__.t.bind(__webpack_require__, /*! remoteApp/Module */ \"webpack/container/remote/remoteApp/Module\", 23)).then((module) => {\r\n    document.getElementById(\"remote-content\").innerHTML = module.remoteModuleGreet();\r\n})\n\n//# sourceURL=webpack://host-app/./index.js?");
+
+/***/ }),
+
+/***/ "webpack/container/reference/remoteApp":
+/*!***********************************************************************!*\
+  !*** external "remoteApp@http://localhost:8081/remoteModuleIndex.js" ***!
+  \***********************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+var __webpack_error__ = new Error();
+module.exports = new Promise((resolve, reject) => {
+	if(typeof remoteApp !== "undefined") return resolve();
+	__webpack_require__.l("http://localhost:8081/remoteModuleIndex.js", (event) => {
+		if(typeof remoteApp !== "undefined") return resolve();
+		var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+		var realSrc = event && event.target && event.target.src;
+		__webpack_error__.message = 'Loading script failed.\n(' + errorType + ': ' + realSrc + ')';
+		__webpack_error__.name = 'ScriptExternalLoadError';
+		__webpack_error__.type = errorType;
+		__webpack_error__.request = realSrc;
+		reject(__webpack_error__);
+	}, "remoteApp");
+}).then(() => (remoteApp));
 
 /***/ })
 
@@ -49,6 +73,36 @@ eval("__webpack_require__.e(/*! import() */ \"remote-app_remoteModuleIndex_js\")
 /******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/create fake namespace object */
+/******/ 	(() => {
+/******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
+/******/ 		var leafPrototypes;
+/******/ 		// create a fake namespace object
+/******/ 		// mode & 1: value is a module id, require it
+/******/ 		// mode & 2: merge all properties of value into the ns
+/******/ 		// mode & 4: return value when already ns object
+/******/ 		// mode & 16: return value when it's Promise-like
+/******/ 		// mode & 8|1: behave like require
+/******/ 		__webpack_require__.t = function(value, mode) {
+/******/ 			if(mode & 1) value = this(value);
+/******/ 			if(mode & 8) return value;
+/******/ 			if(typeof value === 'object' && value) {
+/******/ 				if((mode & 4) && value.__esModule) return value;
+/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
+/******/ 			}
+/******/ 			var ns = Object.create(null);
+/******/ 			__webpack_require__.r(ns);
+/******/ 			var def = {};
+/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
+/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
+/******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
+/******/ 			}
+/******/ 			def['default'] = () => (value);
+/******/ 			__webpack_require__.d(ns, def);
+/******/ 			return ns;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -79,7 +133,7 @@ eval("__webpack_require__.e(/*! import() */ \"remote-app_remoteModuleIndex_js\")
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + ".bundle.js";
+/******/ 			return undefined;
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -147,8 +201,18 @@ eval("__webpack_require__.e(/*! import() */ \"remote-app_remoteModuleIndex_js\")
 /******/ 	
 /******/ 	/* webpack/runtime/remotes loading */
 /******/ 	(() => {
-/******/ 		var chunkMapping = {};
-/******/ 		var idToExternalAndNameMapping = {};
+/******/ 		var chunkMapping = {
+/******/ 			"webpack_container_remote_remoteApp_Module": [
+/******/ 				"webpack/container/remote/remoteApp/Module"
+/******/ 			]
+/******/ 		};
+/******/ 		var idToExternalAndNameMapping = {
+/******/ 			"webpack/container/remote/remoteApp/Module": [
+/******/ 				"default",
+/******/ 				"./Module",
+/******/ 				"webpack/container/reference/remoteApp"
+/******/ 			]
+/******/ 		};
 /******/ 		__webpack_require__.f.remotes = (chunkId, promises) => {
 /******/ 			if(__webpack_require__.o(chunkMapping, chunkId)) {
 /******/ 				chunkMapping[chunkId].forEach((id) => {
@@ -234,6 +298,10 @@ eval("__webpack_require__.e(/*! import() */ \"remote-app_remoteModuleIndex_js\")
 /******/ 			}
 /******/ 			var promises = [];
 /******/ 			switch(name) {
+/******/ 				case "default": {
+/******/ 					initExternal("webpack/container/reference/remoteApp");
+/******/ 				}
+/******/ 				break;
 /******/ 			}
 /******/ 			if(!promises.length) return initPromises[name] = 1;
 /******/ 			return initPromises[name] = Promise.all(promises).then(() => (initPromises[name] = 1));
@@ -265,7 +333,7 @@ eval("__webpack_require__.e(/*! import() */ \"remote-app_remoteModuleIndex_js\")
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if(true) { // all chunks have JS
+/******/ 						if("main" == chunkId) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
 /******/ 							promises.push(installedChunkData[2] = promise);
@@ -290,7 +358,7 @@ eval("__webpack_require__.e(/*! import() */ \"remote-app_remoteModuleIndex_js\")
 /******/ 								}
 /******/ 							};
 /******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
-/******/ 						}
+/******/ 						} else installedChunks[chunkId] = 0;
 /******/ 					}
 /******/ 				}
 /******/ 		};

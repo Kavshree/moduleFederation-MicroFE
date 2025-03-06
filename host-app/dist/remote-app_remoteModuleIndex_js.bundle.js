@@ -15,7 +15,7 @@
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   remoteModuleGreet: () => (/* binding */ remoteModuleGreet)\n/* harmony export */ });\n//A simple Module that exposes a function\r\nfunction remoteModuleGreet() {\r\n  return \"Hello from remote module\";\r\n}\n\n//# sourceURL=webpack://host-app/../remote-app/remoteModuleIndex.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   remoteModuleGreet: () => (/* binding */ remoteModuleGreet)\n/* harmony export */ });\n//A simple Module that exposes a function\r\nfunction remoteModuleGreet() {\r\n  return \"Hello from remote module!!\";\r\n}\n\n//# sourceURL=webpack://host-app/../remote-app/remoteModuleIndex.js?");
 
 /***/ })
 

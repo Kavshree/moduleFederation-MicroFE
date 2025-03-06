@@ -14,7 +14,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "hostApp",
       remotes: {
-        remoteApp: "remoteApp@http://localhost:8081/remoteEntry.js",
+        remoteApp: "remoteApp@http://localhost:8081/remoteModuleIndex.js",
       },
     }),
      new HtmlWebpackPlugin({
@@ -24,6 +24,7 @@ module.exports = {
   ],
   devServer: {
     port: 8080,
+    host: "0.0.0.0", // Allow external access from the container
     static: path.join(__dirname, "dist"),
   },
 };
