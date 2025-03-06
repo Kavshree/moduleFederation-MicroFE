@@ -1,3 +1,3 @@
-import("../remote-app/remoteModuleIndex.js").then((module) => {
+import("remoteApp/Module").then((module) => {
     document.body.innerHTML = module.remoteModuleGreet();
 })
