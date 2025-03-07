@@ -6,7 +6,7 @@ module.exports = {
   mode: "development",
   entry: "./index.js",
   output: {
-    publicPath: "http://localhost:8080/",
+    publicPath: "https://mymicrofecontainerhostapp.salmonground-5ff0b0fe.westus2.azurecontainerapps.io/",
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
@@ -14,7 +14,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "hostApp",
       remotes: {
-        remoteApp: "remoteApp@http://localhost:8081/remoteModuleIndex.js",
+        remoteApp: "remoteApp@https://mymicrofecontainerapp.salmonground-5ff0b0fe.westus2.azurecontainerapps.io/remoteModuleIndex.js",
       },
     }),
      new HtmlWebpackPlugin({
@@ -25,6 +25,7 @@ module.exports = {
   devServer: {
     port: 8080,
     host: "0.0.0.0", // Allow external access from the container
+    allowedHosts: "all", // Allow all host headers
     static: path.join(__dirname, "dist"),
   },
 };

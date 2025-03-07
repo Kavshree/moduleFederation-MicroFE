@@ -6,7 +6,7 @@ module.exports = {
   mode: "development",
   entry: "./remoteModuleIndex.js",
   output: {
-    publicPath: "http://localhost:8081/",
+    publicPath: "https://mymicrofecontainerapp.salmonground-5ff0b0fe.westus2.azurecontainerapps.io/",
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
@@ -26,6 +26,7 @@ module.exports = {
   devServer: {
     port: 8081,
     host: "0.0.0.0", // Allow external access from the container
+    allowedHosts: "all", // Allow all host headers
     static: path.join(__dirname, "dist"),
   },
 };
