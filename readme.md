@@ -1,4 +1,4 @@
-[Blog](https://javascripthisday.blogspot.com/2025/02/micro-front-end-module-federation.html)
+[Blog](https://javascript-unscripted.blogspot.com/2025/02/micro-front-end-module-federation.html)
 
 To Run:
 npm i
